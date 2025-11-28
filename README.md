@@ -20,6 +20,7 @@ nvim
 atuin
 fzf
 z
+pwsh
 
 ## Missing config
 
