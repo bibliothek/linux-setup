@@ -19,3 +19,10 @@ dotnet sdk 10
 nvim
 atuin
 fzf
+z
+
+## Missing config
+
+get dotfiles and install
+configure sudo
+
