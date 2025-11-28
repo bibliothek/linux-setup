@@ -4,10 +4,14 @@ My linux setup
 
 ## Missing installers
 
-All Gui
+### Gui
+
 signal
 filen
 wezterm
+jetbrains tools
+firefox
+veracrypt
 
 ### Terminal
 
