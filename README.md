@@ -13,15 +13,6 @@ jetbrains tools
 firefox
 veracrypt
 
-### Terminal
-
-dotnet sdk 10
-nvim
-atuin
-fzf
-z
-pwsh
-
 ## Missing config
 
 get dotfiles and install
