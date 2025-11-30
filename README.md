@@ -7,11 +7,9 @@ My linux setup
 ### Gui
 
 signal
-filen
 wezterm
 jetbrains tools
 firefox
-veracrypt
 
 ## Missing config
 
