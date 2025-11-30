@@ -6,6 +6,8 @@ My linux setup
 
 Node, nvm
 
+Gum 
+
 Claude 
 
 ### Gui
