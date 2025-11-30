@@ -4,6 +4,10 @@ My linux setup
 
 ## Missing installers
 
+Node, nvm
+
+Claude 
+
 ### Gui
 
 signal
