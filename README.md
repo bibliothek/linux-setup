@@ -4,8 +4,6 @@ My linux setup
 
 ## Missing installers
 
-Node, nvm
-
 Gum 
 
 Claude 
