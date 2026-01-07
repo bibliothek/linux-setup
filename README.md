@@ -4,8 +4,6 @@ My linux setup
 
 ## Missing installers
 
-Gum 
-
 Claude 
 
 ### Gui
@@ -18,5 +16,4 @@ firefox
 ## Missing config
 
 get dotfiles and install
-configure sudo
 

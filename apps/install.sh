@@ -25,7 +25,7 @@ run_scripts() {
 
 # Function to get optional tools selection
 get_optional_selection() {
-  local optional_dir="$SCRIPT_DIR/apps/optional"
+  local optional_dir="$SCRIPT_DIR/optional"
   [ -d "$optional_dir" ] || return
 
   local optional_scripts=()
@@ -49,17 +49,17 @@ echo "Updating package list..."
 sudo apt update
 echo "--------------------"
 
-run_scripts "$SCRIPT_DIR/apps/prerequisites" "prerequisite scripts"
+run_scripts "$SCRIPT_DIR/prerequisites" "prerequisite scripts"
 
 SELECTED_OPTIONAL=$(get_optional_selection)
 
-run_scripts "$SCRIPT_DIR/apps/terminal" "terminal app scripts"
+run_scripts "$SCRIPT_DIR/terminal" "terminal app scripts"
 
 # Run selected optional scripts
 if [ -n "$SELECTED_OPTIONAL" ]; then
   echo "Running selected optional scripts..."
   while IFS= read -r selected; do
-    script="$SCRIPT_DIR/apps/optional/${selected}.sh"
+    script="$SCRIPT_DIR/optional/${selected}.sh"
     if [ -f "$script" ]; then
       echo "Running $script..."
       bash "$script"
