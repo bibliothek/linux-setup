@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install -y software-properties-common
+sudo apt install -qq -y software-properties-common

@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install -y transmission-cli transmission
+sudo apt install -qq -y transmission-cli transmission

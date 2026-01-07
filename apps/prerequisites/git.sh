@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install -y git
+sudo apt install -qq -y git

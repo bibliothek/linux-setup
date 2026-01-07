@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install -y wget
+sudo apt install -qq -y wget

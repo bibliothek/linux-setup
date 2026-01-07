@@ -46,7 +46,7 @@ get_optional_selection() {
 
 # Main installation flow
 echo "Updating package list..."
-sudo apt update
+sudo apt update -qq
 echo "--------------------"
 
 run_scripts "$SCRIPT_DIR/prerequisites" "prerequisite scripts"

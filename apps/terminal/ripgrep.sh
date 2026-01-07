@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install -y ripgrep
+sudo apt install -qq -y ripgrep

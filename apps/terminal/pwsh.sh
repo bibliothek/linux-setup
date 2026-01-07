@@ -10,7 +10,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 
 # Update the list of products
-sudo apt update
+sudo apt update -qq
 
 # Install PowerShell
-sudo apt install -y powershell
+sudo apt install -qq -y powershell

@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install -y zsh
+sudo apt install -qq -y zsh
 #
 # Install Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
