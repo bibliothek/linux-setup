@@ -6,7 +6,7 @@ if command -v brew &> /dev/null; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
   echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   brew install gcc
 fi
