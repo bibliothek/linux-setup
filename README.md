@@ -14,7 +14,6 @@ Claude
 
 ### Gui
 
-signal
 wezterm
 jetbrains tools
 firefox
