@@ -11,5 +11,7 @@ wget -O signal-desktop.sources https://updates.signal.org/static/desktop/apt/sig
 cat signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources > /dev/null
 
 # 3. Update your package database and install Signal:
-sudo apt update && sudo apt install signal-desktop
+sudo apt update && sudo apt install signal-desktop -y -qq
 
+rm signal-desktop.sources
+rm signal-desktop-keyring.gpg
