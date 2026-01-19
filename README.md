@@ -10,10 +10,6 @@ command -v sudo >/dev/null 2>&1 || su -c "apt-get update && apt-get install -y s
 
 ## Missing installers
 
-Claude 
-
-### Gui
-
 wezterm
 jetbrains tools
 firefox
