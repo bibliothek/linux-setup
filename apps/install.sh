@@ -34,4 +34,6 @@ bash "$SCRIPT_DIR/install-optional.sh"
 
 run_scripts "$SCRIPT_DIR/terminal" "terminal app scripts"
 
+run_scripts "$SCRIPT_DIR/config" "configuration scripts"
+
 echo "All setup scripts executed."

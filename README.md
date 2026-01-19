@@ -17,5 +17,4 @@ firefox
 ## Missing config
 
 get dotfiles and install
-configure git name and email
 
