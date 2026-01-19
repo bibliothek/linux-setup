@@ -14,7 +14,3 @@ wezterm
 jetbrains tools
 firefox
 
-## Missing config
-
-get dotfiles and install
-
