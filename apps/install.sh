@@ -38,9 +38,16 @@ run_scripts() {
 }
 
 # Main installation flow
-echo "Updating package list..."
-sudo apt update -qq
-echo "--------------------"
+case "$(uname -s)" in
+  Linux)
+    echo "Updating package list..."
+    sudo apt update -qq
+    echo "--------------------"
+    ;;
+  Darwin)
+    # Nothing to refresh yet: brew is installed by the prerequisite scripts.
+    ;;
+esac
 
 run_scripts "$SCRIPT_DIR/prerequisites" "prerequisite scripts"
 
