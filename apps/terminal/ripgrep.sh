@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install -qq -y ripgrep
+brew install ripgrep
