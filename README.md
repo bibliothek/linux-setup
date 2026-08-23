@@ -19,9 +19,3 @@ if ! xcode-select -p >/dev/null 2>&1; then xcode-select --install; echo "Finish 
 The Command Line Tools provide `git`, so on a fresh machine the first run only
 kicks off their installer. Wait for it to finish, then run the same command
 again to clone and set up.
-
-## Missing installers
-
-jetbrains tools
-firefox
-Zen
