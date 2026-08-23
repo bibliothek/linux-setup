@@ -1,4 +1,4 @@
-# linux-setup
+# unix-setup
 
 My unix setup
 
