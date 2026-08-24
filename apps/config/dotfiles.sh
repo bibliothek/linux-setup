@@ -2,7 +2,7 @@
 
 echo "Configuring dotfiles..."
 
-DOTFILES_DIR="$HOME/dotfiles"
+DOTFILES_DIR="$HOME/source/repos"
 
 # Check if dotfiles directory already exists
 if [ -d "$DOTFILES_DIR" ]; then
