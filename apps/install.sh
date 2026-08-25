@@ -4,6 +4,14 @@ set -e # Exit immediately if a command exits with a non-zero status.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
+# Keep every brew call unattended: NONINTERACTIVE makes brew assume the default
+# answer instead of prompting (including the sudo prompt for casks), and the
+# hints/auto-update noise is not useful in a scripted run.
+export NONINTERACTIVE=1
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+
 # Put Homebrew on PATH. Called before every script because brew is installed
 # mid-run, and each script runs in its own shell that inherits PATH from here.
 load_brew() {
