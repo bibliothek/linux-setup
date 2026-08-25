@@ -64,7 +64,7 @@ run_scripts "$SCRIPT_DIR/apps/prerequisites" "prerequisite scripts"
 load_brew
 bash "$SCRIPT_DIR/apps/install-optional.sh"
 
-run_scripts "$SCRIPT_DIR/apps/terminal" "terminal app scripts"
+run_scripts "$SCRIPT_DIR/apps/required" "required app scripts"
 
 run_scripts "$SCRIPT_DIR/config" "configuration scripts"
 
