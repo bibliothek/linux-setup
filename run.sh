@@ -12,6 +12,26 @@ export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
+# The scripts need the login user, not root: the run may be started with sudo,
+# in which case USER is root.
+export ACTUAL_USER="${SUDO_USER:-${USER:-$(whoami)}}"
+if [ -z "$ACTUAL_USER" ]; then
+  echo "Error: Could not determine username"
+  exit 1
+fi
+
+# The only place that maps an OS to something: every script folder may hold an
+# <os> subfolder whose scripts run on that OS only.
+case "$(uname -s)" in
+  Linux) OS_DIR="linux" ;;
+  Darwin) OS_DIR="macos" ;;
+  *)
+    echo "Error: unsupported OS $(uname -s)."
+    exit 1
+    ;;
+esac
+export OS_DIR
+
 # Put Homebrew on PATH. Called before every script because brew is installed
 # mid-run, and each script runs in its own shell that inherits PATH from here.
 load_brew() {
@@ -25,6 +45,21 @@ load_brew() {
   return 0
 }
 
+# List the scripts of a folder that apply to this OS: the ones directly in it
+# plus the ones in its <os> subfolder. Ordered by file name across both, so a
+# numeric prefix can order an OS-specific script against a shared one.
+list_scripts() {
+  local dir="$1"
+  local script
+  {
+    for script in "$dir"/*.sh "$dir/$OS_DIR"/*.sh; do
+      if [ -f "$script" ]; then
+        printf '%s\t%s\n' "$(basename "$script")" "$script"
+      fi
+    done
+  } | sort -t "$(printf '\t')" -k1,1 | cut -f2
+}
+
 # Function to run all scripts in a directory
 run_scripts() {
   local dir="$1"
@@ -35,29 +70,19 @@ run_scripts() {
   fi
 
   echo "Running $description..."
-  for script in "$dir"/*.sh; do
-    [ -f "$script" ] || continue
+  local script
+  while IFS= read -r script; do
+    [ -n "$script" ] || continue
     echo "Running $script..."
     load_brew
     bash "$script"
     echo "$script finished."
     echo "--------------------"
-  done
+  done < <(list_scripts "$dir")
 }
 
 # Main installation flow
-bash "$SCRIPT_DIR/setup-sudo.sh"
-
-case "$(uname -s)" in
-  Linux)
-    echo "Updating package list..."
-    sudo apt update -qq
-    echo "--------------------"
-    ;;
-  Darwin)
-    # Nothing to refresh yet: brew is installed by the prerequisite scripts.
-    ;;
-esac
+run_scripts "$SCRIPT_DIR/sudo" "sudo setup scripts"
 
 run_scripts "$SCRIPT_DIR/apps/prerequisites" "prerequisite scripts"
 
