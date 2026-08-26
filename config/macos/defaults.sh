@@ -13,6 +13,9 @@ echo "Configuring macOS defaults..."
 # macOS 26.6).
 defaults write NSGlobalDomain AppleICUDateFormatStrings -dict-add 1 "y-MM-dd" 2 "y-MM-dd"
 
+# disable press and hold for rider to work with ideavim
+defaults write com.jetbrains.rider ApplePressAndHoldEnabled -bool false
+
 # Dock shows running applications only, never pinned ones. Restarting the Dock
 # is what makes that visible, so only do it when the setting is not already in
 # place - this runs on every setup run.
