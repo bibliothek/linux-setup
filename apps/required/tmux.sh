@@ -1,5 +1,5 @@
 #!/bin/bash
-brew install tmux
+brew install tmux tmux-fingers
 
 TPM_DIR="$HOME/.tmux/plugins/tpm"
 
