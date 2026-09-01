@@ -27,6 +27,9 @@ git config --global difftool.prompt false
 git config --global merge.tool nvimdiff
 git config --global mergetool.prompt false
 
+# avoid pager when fit terminal
+git config --global core.pager 'less -FRX'
+
 echo "Git configured:"
 git config --global user.name
 git config --global user.email
